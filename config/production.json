@@ -1,0 +1,18 @@
+{
+    "service": {
+      "host": "http://localhost",
+      "port": "5000"
+    },
+    "logger": {
+      "level": "info",
+      "file": {
+        "enabled": true,
+        "level": "error",
+        "path": "logs/service.log"
+      },
+      "console": {
+        "enabled": true,
+        "level": "debug"
+      }
+    }
+  }
