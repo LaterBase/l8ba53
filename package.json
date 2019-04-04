@@ -6,7 +6,10 @@
   "scripts": {
     "start": "node ./start.js",
     "watch": "npm run watch:dev",
+    "build-css": "sass public/scss/materialize.scss public/css/materialize.cssbuild-css",
     "watch:dev": "pm2 start ./start.js --name $npm_package_name --watch --ignore-watch='logs'",
+    "sass": "node-sass public/scss -o public/css",
+    "sass:watch": "node-sass --watch public/scss -o public/css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

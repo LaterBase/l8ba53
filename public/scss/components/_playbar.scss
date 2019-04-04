@@ -1,0 +1,32 @@
+.playbar {
+  width: 100%;
+  padding: 0 !important;
+  position: fixed; 
+  bottom: 0;
+  color: white;
+
+  .controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .timing {
+    vertical-align: bottom;
+    height: 100%;
+  }
+
+  .progress-bar {
+    margin: 0;
+
+    div {
+      padding: 0;
+    }
+
+    .progress {
+      height: 20px;
+      margin: 0;
+    }
+  }
+}

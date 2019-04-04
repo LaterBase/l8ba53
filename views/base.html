@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./css/materialize.css">
+  <title>Laterbase</title>
+</head>
+
+<body class="text-center">
+
+
+  <!-- Header -->
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="" class="brand-logo center">Laterbase</a>
+      </div>
+    </nav>
+  </div>
+
+
+  <!-- Content-->
+  <div class="gap row">
+
+    <!-- Left section panel -->
+    <div class="col hide-on-small-only s12 m2">
+      <p></p>
+    </div>
+
+    <!-- Base -->
+    <div class="base col s12 m8">
+      <!-- Add new song -->
+      <div class="row">
+        <div class="search center">
+          <div class="input-field inline col s10">
+            <i class="material-icons prefix">queue_music</i>
+            <input id="new_song" type="text" class="validate">
+            <label for="new_song">Add new song</label>
+          </div>
+          <div class="input-field inline col s2">
+            <button class="btn-floating btn-large waves-effect waves-light" onclick="addTrack();"><i
+                class="material-icons">add</i></button>
+          </div>
+        </div>
+      </div>
+      <!-- Queue -->
+      <div class="row">
+        <div class="col s12 m8 offset-m2">
+          <div class="queue center">
+            <ul id="queue" class="collection">
+              <li class="collection-item avatar">
+                <i class="material-icons circle green">person</i>
+                <span class="title">Wakin On A Pretty Day</span>
+                <p>Kurt Vile</p>
+                <!-- <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a> -->
+              </li>
+              <li class="collection-item avatar">
+                <i class="material-icons circle">person</i>
+                <span class="title">Thunder High On A Mountain</span>
+                <p>Joe Satriani</p>
+                <!-- <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a> -->
+              </li>
+              <li class="collection-item avatar">
+                <i class="material-icons circle green">person</i>
+                <span class="title">Indian Sky</span>
+                <p>John Butler</p>
+                <!-- <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a> -->
+              </li>
+              <li class="collection-item avatar">
+                <i class="material-icons circle red">person</i>
+                <span class="title">Austra</span>
+                <p>Utopia</p>
+                <!-- <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a> -->
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right section panel -->
+    <div class="col hide-on-small-only s12 m2">
+      <p></p>
+    </div>
+  </div>
+
+
+  <!-- Controller -->
+  <div class="row">
+    <div class="playbar col s12 blue-grey center-align">
+
+      <!-- Song information -->
+      <div class="row">
+        <div class="song-information col s12">
+          <h5>Pola & Bryson - Unsaid</h5>
+        </div>
+      </div>
+
+      <!-- Player controller -->
+      <div class="row">
+        <div class="timing col s2">
+          <p>1:27</p>
+        </div>
+        <div class="controls col s8">
+          <i class="medium material-icons">fast_rewind</i>
+          <i class="large material-icons" onclick="startProgress();">pause_circle_outline</i>
+          <i class="medium material-icons">fast_forward</i>
+        </div>
+        <div class="timing scol s2">
+          <p>5:36</p>
+        </div>
+      </div>
+
+      <!-- Track lenght -->
+      <!-- <div class="row">
+        <div class="col s12">
+
+
+        </div>
+      </div> -->
+
+      <!-- Progress bar -->
+      <div class="progress-bar row">
+        <div class="col s12">
+          <div class="progress blue-grey">
+            <div id="progress" class="determinate" style="width: 27%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script src="./js/materialize.min.js"></script>
+<script>
+  available = 3;
+  addTrack = function () {
+    switch (available--) {
+      case 3:
+        document.getElementById('queue').innerHTML += '<li class="collection-item avatar"><i class="material-icons circle red">person</i><span class="title">Phil Collins</span><p>In The Air Tonight</p><a href="#!" class="secondary-content"><i class="material-icons">grade</i></a></li>';
+        break;
+      case 2:
+        document.getElementById('queue').innerHTML += '<li class="collection-item avatar"><i class="material-icons circle red">person</i><span class="title">Boston</span><p>More Than A Feeling</p><a href="#!" class="secondary-content"><i class="material-icons">grade</i></a></li>';
+        break;
+      case 1:
+        document.getElementById('queue').innerHTML += '<li class="collection-item avatar"><i class="material-icons circle red">person</i><span class="title">Cheap Tricks</span><p>I Want You To Want Me</p><a href="#!" class="secondary-content"><i class="material-icons">grade</i></a></li>';
+        break;
+      default:
+        M.toast({ html: 'Que is full!' })
+        break;
+    }
+  };
+</script>
+
+</html>

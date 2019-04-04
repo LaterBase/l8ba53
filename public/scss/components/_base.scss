@@ -1,0 +1,15 @@
+.base {
+
+  .search {
+    width: 80%;
+  }
+
+  .queue {
+    // width: 60%;
+    margin-right: auto;
+
+    .avatar {
+      min-height: 0;
+    }
+  }
+}
